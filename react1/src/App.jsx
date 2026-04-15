@@ -1,6 +1,7 @@
 import Bombilla from "./Bombilla";
 import BurguerCookPoint from "./BurguerCookPoint";
 import BurguerExtras from "./BurguerExtras";
+import ChooseNumber from "./ChooseNumber";
 import FiltroPaises from "./FiltroPaises";
 import "./index.css";
 import TodoList from "./TodoList";
@@ -8,7 +9,7 @@ import TodoList from "./TodoList";
 export default function App() {
   const todos = [
     { what: "Fregar la terraza", done: true },
-    { what: "Comprar patatas", done: true },
+    { what: "Comprar patatas", done: false },
     { what: "Reservar vuelos", done: false },
   ];
 
@@ -25,6 +26,8 @@ export default function App() {
           <BurguerExtras />
           <BurguerCookPoint />
           <FiltroPaises />
+          <ChooseNumber initial={4} low={0} high={10} />
+          <ChooseNumber initial={2} low={0} high={4} />
         </div>
       </section>
     </main>
