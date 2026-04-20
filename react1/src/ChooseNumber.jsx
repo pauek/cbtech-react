@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { DebugContext } from "./App";
 
 export default function ChooseNumber({ initial, low, high }) {
   const [num, setNum] = useState(initial);
+  const debugMode = useContext(DebugContext);
 
   const decrement = () => {
     setNum((lastNum) => Math.max(low, lastNum - 1));
@@ -19,7 +21,14 @@ export default function ChooseNumber({ initial, low, high }) {
       >
         -
       </button>
-      <span className="text-5xl font-bold w-14 text-center">{num}</span>
+      <span
+        className={
+          "text-5xl font-bold w-14 text-center " +
+          (debugMode ? "text-red-500" : "")
+        }
+      >
+        {num}
+      </span>
       <button
         className="w-8 h-8 font-mono text-2xl border rounded"
         onClick={increment}

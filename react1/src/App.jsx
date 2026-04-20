@@ -1,35 +1,31 @@
-import Bombilla from "./Bombilla";
-import BurguerCookPoint from "./BurguerCookPoint";
-import BurguerExtras from "./BurguerExtras";
-import ChooseNumber from "./ChooseNumber";
-import FiltroPaises from "./FiltroPaises";
+import { createContext, useState } from "react";
 import "./index.css";
-import TodoList from "./TodoList";
+import SectionTodos from "./SectionTodos";
+import SectionComponentes from "./SectionComponentes";
+import SectionUseEffect from "./SectionUseEffect";
+import InfiniteLoop from "./InfiniteLoop";
+
+export const DebugContext = createContext(false);
+export const UserContext = createContext(null);
 
 export default function App() {
-  const todos = [
-    { what: "Fregar la terraza", done: true },
-    { what: "Comprar patatas", done: false },
-    { what: "Reservar vuelos", done: false },
-  ];
+  const [debugMode, setDebugMode] = useState(true);
 
   return (
-    <main className="py-4 px-6 flex flex-col gap-6">
-      <section>
-        <h1>Todos</h1>
-        <TodoList todos={todos} />
-      </section>
-      <section>
-        <h2>Componentes con estado</h2>
-        <div className="grid grid-cols-2 gap-2">
-          <Bombilla />
-          <BurguerExtras />
-          <BurguerCookPoint />
-          <FiltroPaises />
-          <ChooseNumber initial={4} low={0} high={10} />
-          <ChooseNumber initial={2} low={0} high={4} />
-        </div>
-      </section>
-    </main>
+    <UserContext value={null}>
+      <DebugContext value={debugMode}>
+        <main className="py-4 px-6 flex flex-col gap-6">
+          <button onClick={() => setDebugMode((prev) => !prev)}>
+            {debugMode ? "Exit" : "Enter"}
+          </button>
+
+          {/* <SectionTodos /> */}
+          {/* <SectionComponentes /> */}
+          <SectionUseEffect />
+
+          <InfiniteLoop />
+        </main>
+      </DebugContext>
+    </UserContext>
   );
 }
