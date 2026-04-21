@@ -8,12 +8,15 @@
   }
 }
 
-
 @layer base {
   :root {
   }
 
+  h1 {
+    @apply text-4xl font-bold;
+  }
+
   body {
+    @apply p-6;
   }
 }
-
