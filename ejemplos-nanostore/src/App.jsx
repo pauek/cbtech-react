@@ -1,6 +1,8 @@
 import Bombilla from "./Bombilla"
 import "./index.css"
+import NasaImageSearch from "./NasaImageSearch"
 import NumberList from "./NumberList"
+import SetBombillas from "./SetBombillas"
 import { $darkMode, addRandomNumber, resetNumberList } from "./stores"
 import { useStore } from "@nanostores/react"
 
@@ -14,13 +16,11 @@ export function App() {
     const darkMode = useStore($darkMode)
     return (
         <>
+            <NasaImageSearch />
             <button onClick={() => $darkMode.set(!$darkMode.get())}>
                 {darkMode ? "light" : "dark"}
             </button>
-            <div className={darkMode ? "bg-black text-white" : ""}>
-                <Bombilla />
-                <Bombilla />
-            </div>
+            <SetBombillas />
             <NumberList />
 
             <button onClick={addRandomNumber}>Add number</button>
