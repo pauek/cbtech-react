@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { DebugContext } from "./App";
+import { DebugContext } from "./contexts";
 import Watch from "./Watch";
 import NasaImageSearch from "./NasaImageSearch";
 

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { DebugContext } from "./App";
+import { DebugContext } from "./contexts";
 
 export default function ChooseNumber({ initial, low, high }) {
   const [num, setNum] = useState(initial);

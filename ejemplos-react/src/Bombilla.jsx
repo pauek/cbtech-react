@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import b_off from "../assets/bombilla-off.svg";
 import b_on from "../assets/bombilla-on.svg";
-import { DebugContext } from "./App";
+import { DebugContext } from "./contexts";
 
 export default function Bombilla() {
   const [encendida, setEncendida] = useState(false);
