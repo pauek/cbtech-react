@@ -41,6 +41,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
+
 export default function App() {
   return <Outlet />;
 }
@@ -62,7 +63,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
+    <main className="pt-16 p-4 container mx-auto bg-red-100">
       <h1>{message}</h1>
       <p>{details}</p>
       {stack && (

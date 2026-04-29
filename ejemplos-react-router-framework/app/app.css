@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-sans:
+        "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 h1 {
@@ -13,4 +14,17 @@ a {
 }
 main {
     @apply p-6;
+}
+
+a.active {
+    color: red;
+}
+
+a.pending {
+    color: gray;
+    animation: pulse 1s infinite;
+}
+
+button {
+    @apply bg-gray-200 px-2 py-1 rounded shadow;
 }
